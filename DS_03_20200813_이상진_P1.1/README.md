@@ -14,9 +14,9 @@ for i = 0; i < Mat_size ; i++   / s/e = 1 , Frequency = Mat_size+1              
 
   int B[j][i] = int A[i][j]     / s/e = 1 , Frequency = Mat_size^2                 Total steps =Mat_size^2
                                 
-                                / Total = 2Mat_size^2 +2Mat_size+1
+  ㅁ                             / Total = 2Mat_size^2 +2Mat_size+1
                                 
-                                / O(n^2)
+  ㅁ                             / O(n^2)
 
 
 1. 과제설명
