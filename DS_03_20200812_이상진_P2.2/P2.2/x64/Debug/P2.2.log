@@ -1,0 +1,3 @@
+﻿  FileName.c
+C:\Users\tkdwl\source\repos\P2.2\P2.2\FileName.c(86,11): warning C4101: 'Sparse_B' :참조되지 않은 지역 변수입니다.
+  P2.2.vcxproj -> C:\Users\tkdwl\source\repos\P2.2\x64\Debug\P2.2.exe
