@@ -10,13 +10,13 @@ typedef struct Element
 
 Element* Transpose_Triple1(Element S_a[])
 {
-	static Element S_b[MAX_ELEMENTS];
+	static Element S_b[MAX_ELEMENTS];//행렬이 함수가 끝나도 남아있게 하는 static
 	int v_num1 = S_a[0].value;
 	S_b[0].col = S_a[0].row;
 	S_b[0].row = S_a[0].col;
 	S_b[0].value = v_num1;
 	printf("%d, %d, %d \n", S_b[0].row, S_b[0].col, S_b[0].value);
-	if (v_num1 > 0)
+	if (v_num1 > 0) //
 	{
 		int current = 1;
 		for (int i = 0; i <= S_a[0].col; i++)
