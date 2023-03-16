@@ -16,7 +16,7 @@ Element* Transpose_Triple1(Element S_a[])//입력함수의 전치행렬 함수�
 	S_b[0].row = S_a[0].col;
 	S_b[0].value = v_num1;
 	printf("%d, %d, %d \n", S_b[0].row, S_b[0].col, S_b[0].value);
-	if (v_num1 > 0) //
+	if (v_num1 > 0)
 	{
 		int current = 1;
 		for (int i = 0; i <= S_a[0].col; i++)
@@ -32,7 +32,7 @@ Element* Transpose_Triple1(Element S_a[])//입력함수의 전치행렬 함수�
 					current += 1;
 				}
 			}
-		
+
 		}
 	}
 	return S_b;
@@ -41,15 +41,65 @@ Element* Transpose_Triple1(Element S_a[])//입력함수의 전치행렬 함수�
 
 
 
-void Print_Sparse_MAt(Element* arr) {
-	int current = 1;
+void Print_Sparse_MAt(Element* arr) {//희소행렬을 출력하는 함수
+	Element narr[MAX_ELEMENTS];
+	int row[MAX_ELEMENTS];// 빈도수배열
+	int pos[MAX_ELEMENTS];// 위치배열
+	narr[0].row = arr[0].row;
+	narr[0].col = arr[0].col;
+	narr[0].value = arr[0].value;
 	for (int i = 0; i < arr[0].row; i++)
 	{
-		for (int j = 0; j < arr[0].col; j++)
+		row[i] = 0;
+	}
+	for (int i = 1; i <= arr[0].value; i++)
+	{
+		row[arr[i].row] += 1; 
+	}
+	pos[0] = 1;
+	for (int i = 1; i <= (arr[0].col - 1); i++)
+	{
+		pos[i] = pos[i - 1] + row[i - 1];
+	}
+	for (int i = 1; i < (MAX_ELEMENTS); i++)
+	{
+		int abs_pos = pos[arr[i].row];
+		narr[abs_pos].row = arr[i].row;
+		narr[abs_pos].col = arr[i].col;
+		narr[abs_pos].value = arr[i].value;
+		pos[arr[i].row] += 1;
+	}
+	printf("\n");
+	for (int i = 1; i < MAX_ELEMENTS; i++)
+	{
+		printf("%d, %d, %d \n", narr[i].row, narr[i].col, narr[i].value);
+	}
+	printf("\n");
+	for (int i = 1; i < narr[0].col; i++)
+	{
+		for (int j = i+1; j <= MAX_ELEMENTS; j++)
 		{
-				if ((arr[current].row == i) && (arr[current].col == j))
+			if ((narr[i].row==narr[j].row)&&(narr[i].col > narr[j].col))
+			{
+				int temp;
+				temp = narr[j].value;
+				narr[j].value = narr[i].value;
+				narr[i].value = temp;
+				temp = narr[j].col;
+				narr[j].col = narr[i].col;
+				narr[i].col = temp;
+				
+			}
+		}
+	}
+	int current = 1;
+	for (int i = 0; i < narr[0].row; i++)
+	{
+		for (int j = 0; j < narr[0].col; j++)
+		{
+				if ((narr[current].row == i) && (narr[current].col == j))
 				{
-					printf("%d", arr[current].value);
+					printf("%d", narr[current].value);
 					current += 1;
 				}
 				else
@@ -63,14 +113,15 @@ void Print_Sparse_MAt(Element* arr) {
 	printf("\n");
 }
 
+
 int main(void) {
 	Element Sparse_A[MAX_ELEMENTS] = { {6,6,7},
 	{0,2,6},
-	{1,0,5},
 	{1,4,7},
+	{1,0,8},
 	{2,3,3},
-	{4,0,8},
 	{4,1,9},
+	{4,0,5},
 	{5,3,2} };
 	Element* Sparse_B;
 	Sparse_B= Transpose_Triple1(Sparse_A);
