@@ -68,14 +68,14 @@ void Print_Sparse_MAt(Element* arr) {//희소행렬을 출력하는 함수
 		narr[abs_pos].col = arr[i].col;
 		narr[abs_pos].value = arr[i].value;
 		pos[arr[i].row] += 1;
-	}
+	}//row를 오름차순으로 정리
 	printf("\n");
 	for (int i = 1; i < MAX_ELEMENTS; i++)
 	{
 		printf("%d, %d, %d \n", narr[i].row, narr[i].col, narr[i].value);
 	}
 	printf("\n");
-	for (int i = 1; i < narr[0].col; i++)
+	for (int i = 1; i < narr[0].col; i++)//같은 row를 가진것들의 col에 대한 오름차순 정리
 	{
 		for (int j = i+1; j <= MAX_ELEMENTS; j++)
 		{
@@ -92,7 +92,7 @@ void Print_Sparse_MAt(Element* arr) {//희소행렬을 출력하는 함수
 			}
 		}
 	}
-	int current = 1;
+	int current = 1;//분출력부분
 	for (int i = 0; i < narr[0].row; i++)
 	{
 		for (int j = 0; j < narr[0].col; j++)
