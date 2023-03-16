@@ -8,9 +8,9 @@ typedef struct Element
 	int value;
 }Element;
 
-Element* Transpose_Triple2(Element S_a[])
+Element* Transpose_Triple2(Element S_a[])//*알고리즘3 을 구현한 전치행렬함수
 {
-	static Element S_b[MAX_ELEMENTS];
+	static Element S_b[MAX_ELEMENTS];//행렬이 함수가 끝나도 남아있게 하는 static
 	int v_num1 = S_a[0].value;
 	S_b[0].col = S_a[0].row;
 	S_b[0].row = S_a[0].col;
@@ -19,7 +19,7 @@ Element* Transpose_Triple2(Element S_a[])
 	int pos[MAX_ELEMENTS];
 	if (v_num1 > 0)
 	{
-		for (int i = 0; i < S_a[0].col; i++)
+		for (int i = 0; i < S_a[0].col; i++)//빈도수 초기와
 		{
 			row[i] = 0;
 		}
@@ -27,9 +27,9 @@ Element* Transpose_Triple2(Element S_a[])
 		{
 			row[S_a[i].col] += 1;
 		}
-		pos[0] = 1;
+		pos[0] = 1;//배열의 0위치에는 행렬의 정보가 담겨있으므로 시작점은 1위치가 되어야함
 
-		for (int i = 1; i < (S_a[0].col - 1); i++)
+		for (int i = 1; i < (S_a[0].col - 1); i++)//(숫자)의 행 시작점은 (숫자-1)행의 시작점 + (숫자-1)의 빈도수 와 같다 
 		{
 			pos[i] = pos[i - 1] + row[i - 1];
 		}
@@ -51,7 +51,7 @@ Element* Transpose_Triple2(Element S_a[])
 	return S_b;
 }
 
-void Print_Sparse_MAt(Element* arr) {
+void Print_Sparse_MAt(Element* arr) {//희소행렬수출력함수
 	int current = 1;
 	for (int i = 0; i < arr[0].row; i++)
 	{
