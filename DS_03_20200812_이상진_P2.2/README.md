@@ -1,36 +1,23 @@
-Algorithm Trandspose_Mat(int A[][Mat_size],int B[][Mat_size])
-
-input : 배열 A 배열 B
-
-output : 배열 A의 전치행렬 배열 B
-
-define Mat_size 5
-
-int B[Mat_size][Mat_size];      / s/e = 0 , Frequency = 0                          Total steps =0
-
-for i = 0; i < Mat_size ; i++   / s/e = 1 , Frequency = Mat_size+1                 Total steps =i+1
-
- for j = 0; j < Mat_size ; j++  / s/e = 1 , Frequency = Mat_size(Mat_size+1)       Total steps =Mat_size(Mat_size+1)
-
-  int B[j][i] = int A[i][j]     / s/e = 1 , Frequency = Mat_size^2                 Total steps =Mat_size^2
-                                
-  ㅁ                             / Total = 2Mat_size^2 +2Mat_size+1
-                                
-  ㅁ                             / O(n^2)
-
-
 1. 과제설명
+Element Sparse_A[MAX_ELEMENTS] =
+  {0,2,6},
+	{1,0,5},
+	{1,4,7},
+	{2,3,3},
+	{4,0,8},
+	{4,1,9},
+	{5,3,2}
+  
+  입력으로 주어진 Sparse_A의 전치행렬 Sparse_B를 만들고
+  Sparse_B 저장한 정보를 0을 포함한 희소행렬로 출력하여
 
-nXn 행렬이 주어졌을때 이 행렬의 전치행렬을 구하는 알고리즘을 의사코드로 기술하는 과제 1.1
-(행렬이 5X5로 주어졌음)
-원본배열 A를 받아 전치행렬 배열 B를 만들기 위해 배열 A,B둘다 받는 함수를 작성한후 for 반복문을 이용해 행과 열의 갯수를 곱한만큼 반복되는 반복문을 만들고
-A의 전치행렬을 만들기위해 A의 행,열위치를 바꾸어 B에 대입하였음.
-이후 알고리즘의 시간복잡도를 계산하기위해 위처럼 서술함.
+Element* Transpose_Triple2(Element S_a[]) 함수 구현
+빈도수와 위치 정보를 이용한 알고리즘3.를 구현
 
-2. 알고리즘 첨부
+2. PDF 1페이지
 
 3. 과제에 대한 고찰
+교수님이 수업시간에 말씀하셨던것 처럼 단순하여 이해하기 쉬웠던 알고리즘2번에 비해 알고리즘3번은 이해하는데 시간이 오래걸리지만 확실히 효율이 좋다는게 이해를 하면서 느껴졌다.
+또 내가 만약 직장을 다니게 되고 인수인계까지 생각을 하고 코드를 짜느냐 아니면 최고의 효율을 가진 코드를 짜느냐 어느것에 무게를 두는것이 더 나은 개발자인가에 대해 생각해보았다.
 
-시간복잡도를 계산할때
-for i = 0; i < Mat_size ; i++  의 문장이 왜 Mat_size + 1 번만큼 반복되는지 이해하기위해 구글링을 하여 해결하였음
-관계연산자 < 가 마지막으로 반복문을 탈출할때 한번더 사용되기 때문에 빈도가 하나 올라가는것으로 이해하였음
+/*과제 P2.1에서 처럼 출력하는 부분에 의문점이 있었지만 P2.1에서 이미 구현하였으므로 p2.2에서는 구현하지 않았다*/

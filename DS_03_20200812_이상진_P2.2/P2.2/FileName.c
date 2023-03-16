@@ -8,9 +8,15 @@ typedef struct Element
 	int value;
 }Element;
 
+<<<<<<< HEAD
 Element* Transpose_Triple2(Element S_a[])//ÀÔ·ÂÇÔ¼öÀÇ ÀüÄ¡Çà·Ä ÇÔ¼öÀÇ ÁÖ¼Ò¸¦ ¹ÝÈ¯ÇÏ´Â ÇÔ¼ö
 {
 	static Element S_b[MAX_ELEMENTS];//Çà·ÄÀÌ ÇÔ¼ö°¡ ³¡³ªµµ ³²¾ÆÀÖ°Ô ÇÏ´Â static
+=======
+Element* Transpose_Triple2(Element S_a[])//*ì•Œê³ ë¦¬ì¦˜3 ì„ êµ¬í˜„í•œ ì „ì¹˜í–‰ë ¬í•¨ìˆ˜
+{
+	static Element S_b[MAX_ELEMENTS];//í–‰ë ¬ì´ í•¨ìˆ˜ê°€ ëë‚˜ë„ ë‚¨ì•„ìžˆê²Œ í•˜ëŠ” static
+>>>>>>> 7721fd497154b05853a309c55a89832a03d77414
 	int v_num1 = S_a[0].value;
 	S_b[0].col = S_a[0].row;
 	S_b[0].row = S_a[0].col;
@@ -19,7 +25,7 @@ Element* Transpose_Triple2(Element S_a[])//ÀÔ·ÂÇÔ¼öÀÇ ÀüÄ¡Çà·Ä ÇÔ¼öÀÇ ÁÖ¼Ò¸¦ ¹ÝÈ
 	int pos[MAX_ELEMENTS];
 	if (v_num1 > 0)
 	{
-		for (int i = 0; i < S_a[0].col; i++)
+		for (int i = 0; i < S_a[0].col; i++)//ë¹ˆë„ìˆ˜ ì´ˆê¸°ì™€
 		{
 			row[i] = 0;
 		}
@@ -27,9 +33,13 @@ Element* Transpose_Triple2(Element S_a[])//ÀÔ·ÂÇÔ¼öÀÇ ÀüÄ¡Çà·Ä ÇÔ¼öÀÇ ÁÖ¼Ò¸¦ ¹ÝÈ
 		{
 			row[S_a[i].col] += 1; // °°Àº ¿­ °ªÀ» °¡Áö´Â ºóµµ¼ö È®ÀÎ
 		}
+<<<<<<< HEAD
 		pos[0] = 1; //S_b[0]¿¡´Â ¹«Á¶°Ç Çà·Ä¿¡´ëÇÑ Á¤º¸°¡ µé¾î°¡±â¶§¹®¿¡ row°ª 0Àº ¹«Á¶°Ç S_b[1]ºÎÅÍ ½ÃÀÛÇÑ´Ù. 
+=======
+		pos[0] = 1;//ë°°ì—´ì˜ 0ìœ„ì¹˜ì—ëŠ” í–‰ë ¬ì˜ ì •ë³´ê°€ ë‹´ê²¨ìžˆìœ¼ë¯€ë¡œ ì‹œìž‘ì ì€ 1ìœ„ì¹˜ê°€ ë˜ì–´ì•¼í•¨
+>>>>>>> 7721fd497154b05853a309c55a89832a03d77414
 
-		for (int i = 1; i < (S_a[0].col - 1); i++)
+		for (int i = 1; i < (S_a[0].col - 1); i++)//(ìˆ«ìž)ì˜ í–‰ ì‹œìž‘ì ì€ (ìˆ«ìž-1)í–‰ì˜ ì‹œìž‘ì  + (ìˆ«ìž-1)ì˜ ë¹ˆë„ìˆ˜ ì™€ ê°™ë‹¤ 
 		{
 			pos[i] = pos[i - 1] + row[i - 1];
 		}
@@ -51,7 +61,7 @@ Element* Transpose_Triple2(Element S_a[])//ÀÔ·ÂÇÔ¼öÀÇ ÀüÄ¡Çà·Ä ÇÔ¼öÀÇ ÁÖ¼Ò¸¦ ¹ÝÈ
 	return S_b;
 }
 
-void Print_Sparse_MAt(Element* arr) {
+void Print_Sparse_MAt(Element* arr) {//í¬ì†Œí–‰ë ¬ìˆ˜ì¶œë ¥í•¨ìˆ˜
 	int current = 1;
 	for (int i = 0; i < arr[0].row; i++)
 	{
