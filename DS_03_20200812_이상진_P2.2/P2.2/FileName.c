@@ -8,9 +8,9 @@ typedef struct Element
 	int value;
 }Element;
 
-Element* Transpose_Triple2(Element S_a[])
+Element* Transpose_Triple2(Element S_a[])//입력함수의 전치행렬 함수의 주소를 반환하는 함수
 {
-	static Element S_b[MAX_ELEMENTS];
+	static Element S_b[MAX_ELEMENTS];//행렬이 함수가 끝나도 남아있게 하는 static
 	int v_num1 = S_a[0].value;
 	S_b[0].col = S_a[0].row;
 	S_b[0].row = S_a[0].col;
@@ -25,9 +25,9 @@ Element* Transpose_Triple2(Element S_a[])
 		}
 		for (int i = 1; i <= v_num1; i++)
 		{
-			row[S_a[i].col] += 1;
+			row[S_a[i].col] += 1; // 같은 열 값을 가지는 빈도수 확인
 		}
-		pos[0] = 1;
+		pos[0] = 1; //S_b[0]에는 무조건 행렬에대한 정보가 들어가기때문에 row값 0은 무조건 S_b[1]부터 시작한다. 
 
 		for (int i = 1; i < (S_a[0].col - 1); i++)
 		{
