@@ -8,7 +8,7 @@ typedef struct Element
 	int value;
 }Element;
 
-Element* Transpose_Triple1(Element S_a[])
+Element* Transpose_Triple1(Element S_a[])//입력함수의 전치행렬 함수의 주소를 반환하는 함수
 {
 	static Element S_b[MAX_ELEMENTS];//행렬이 함수가 끝나도 남아있게 하는 static
 	int v_num1 = S_a[0].value;
