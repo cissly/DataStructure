@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//노드 생성함수
 Node* Create_Node(int newdata)
 {
 	Node* newnode;
@@ -11,6 +12,7 @@ Node* Create_Node(int newdata)
 	return newnode;
 }
 
+//노드제거함수
 void Destroy_Node(Node* node)
 {
 	if (node != NULL)
@@ -20,6 +22,7 @@ void Destroy_Node(Node* node)
 	node = NULL;
 }
 
+//노드 추가함수
 void Append_Node(Node** head, Node* newnode)
 {
 	if (*head == NULL)
@@ -37,6 +40,7 @@ void Append_Node(Node** head, Node* newnode)
 	}
 }
 
+//해당하는 위치의 노드주소를 반환하는 함수
 Node* Get_Node(Node* head, int pos)
 {
 	int present_pos = 0;
@@ -57,6 +61,7 @@ Node* Get_Node(Node* head, int pos)
 	return node_add;
 }
 
+//출력함수
 void Print_list(Node* head)
 {
 	Node* iter = head;
@@ -74,6 +79,7 @@ void Print_list(Node* head)
 	printf("\n");
 }
 
+//타켓하는 노드의 주소를 받아 헤드에서부터 찾아나가 지우는 함수
 void Remove_Node(Node** head, Node* targetNode)
 {
 	Node* cur_node = *head;
@@ -100,6 +106,7 @@ void Remove_Node(Node** head, Node* targetNode)
 	free(targetNode);
 }
 
+//노드를 특정위치에 추가시키는 함수
 void Insert_Node_After(Node* currentNode, Node* newNode)
 {
 	Node* temp = currentNode->link;
@@ -107,6 +114,7 @@ void Insert_Node_After(Node* currentNode, Node* newNode)
 	newNode->link = temp;
 }
 
+//data를 입력받아 그 데이터를 갇는 위치를 출력하는 함수
 Node* Search_Node(Node* head, int data)
 {
 	int pos = 0;
