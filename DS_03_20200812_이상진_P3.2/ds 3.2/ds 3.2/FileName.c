@@ -20,8 +20,10 @@ int main(void)
 	Print_list(head);
 
 	//remove함수 기능테스트
-	Remove_Node(&head, Get_Node(head, 2));
+	Remove_Node(&head, Get_Node(head, 1));
 	Print_list(head);
+
+	Search_Node(head, 25);
 
 	return 0;
 }

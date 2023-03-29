@@ -21,4 +21,6 @@ void Remove_Node(Node** head, Node* targetNode);
 
 void Insert_Node_After(Node* currentNode, Node* newNode);
 
+Node* Search_Node(Node* head, int data);
+
 #endif

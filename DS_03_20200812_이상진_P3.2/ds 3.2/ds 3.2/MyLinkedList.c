@@ -83,9 +83,13 @@ void Remove_Node(Node** head, Node* targetNode)
 	}
 	else
 	{
-		while ((cur_node->link != targetNode)||(cur_node->link == NULL))
+		while ((cur_node->link != targetNode))
 		{
 			printf("%d", cur_node == targetNode);
+			if (cur_node->link == NULL)
+			{
+				break;
+			}
 			cur_node = cur_node->link;
 		}
 		if (cur_node->link == targetNode)
@@ -101,4 +105,28 @@ void Insert_Node_After(Node* currentNode, Node* newNode)
 	Node* temp = currentNode->link;
 	currentNode->link = newNode;
 	newNode->link = temp;
+}
+
+Node* Search_Node(Node* head, int data)
+{
+	int pos = 0;
+	Node* current_node = head;
+	while (current_node->data != data)
+	{
+		pos += 1;
+		if (current_node->link == NULL)
+		{
+			break;
+		}
+		current_node = current_node->link;
+	}
+	if (current_node->data == data)
+	{
+		printf("%d는 %d에 존재합니다", data ,pos);
+		return current_node;
+	}
+	else if (current_node->link == NULL)
+	{
+		printf("존재하지않습니다.");
+	}
 }
