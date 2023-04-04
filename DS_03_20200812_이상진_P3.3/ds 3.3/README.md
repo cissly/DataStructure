@@ -9,18 +9,21 @@ Node* Reverse_List(Node* head);
 
 //추가된 코드
 
-  Node* Reverse_List(Node* head)
-  {
-    Node* reverse = NULL;
-    Node* temp = NULL;
-    while (head != NULL)
-    {
-      temp = reverse;
-      reverse = head;
-      head = head->link;
-      reverse->link = temp;
-    }
-    return reverse;
-  }
-  
+      Node* Reverse_List(Node* head)
+      {
+        Node* reverse = NULL;
+        Node* temp = NULL;
+        while (head != NULL)
+        {
+          temp = reverse;
+          reverse = head;
+          head = head->link;
+          reverse->link = temp;
+        }
+        return reverse;
+      }
+
 //코드
+
+3.3과제를 4.1과 함께 제출하기때문에 가능한 고찰이 있다. 4.1의 과제를 체줄할때 원형 연결리스트의 끝을 가르키는 tail 노드포인터가 있는데 이것을 사용하면 할수록
+다른 평범한 연결리스트에서도 그냥 head를 사용하는것이 아닌 tail을 사용한다면 특정한 상황에서 훨씬 간편하게 기능을 구현할 수 있다고 생각이 된다.
