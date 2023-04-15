@@ -93,6 +93,8 @@ Node* Merge_List(Node* a, Node* b)
 	}
 	return result;
 }
+
+Node* Merge_List_P(Node* a, Node* b);
 int main(void)
 {
 	Node* head_a = NULL
@@ -111,14 +113,72 @@ int main(void)
 	Append_Node(&head_b, Create_Node(27));
 	Append_Node(&head_b, Create_Node(28));
 	//a,b 연결리스트 출력
-	Print_Linked_List
-	(head_a);
-	Print_Linked_List
-	(head_b);
+
 	//연결리스트 합병 함수 호출
 	head_c = Merge_List
 	(head_a, head_b);
 	//합병된 연결리스트 출력
+	Print_Linked_List
+	(head_a);
+	Print_Linked_List
+	(head_b);
 	Print_Linked_List(head_c);
+
+	Node* head_d = Merge_List_P(head_a,head_b);
+	Print_Linked_List
+	(head_a);
+	Print_Linked_List
+	(head_b);
+	Print_Linked_List(head_d);
 	return 0;
+}
+
+Node* Merge_List_P(Node* a, Node* b)
+{
+	Node* result = NULL;
+	Node* pos = NULL;
+	Node* temp_a = a;
+	Node* temp_b = b;
+	int num = 0;
+	while ((temp_a != NULL) && (temp_b != NULL))
+	{
+		if (temp_a->data > temp_b->data)
+		{
+			Append_Node(&result, temp_b);
+			pos = temp_b;
+			temp_b = temp_b->link;
+			pos->link = NULL;
+			printf("노드 d %d회", ++num);
+			Print_Linked_List(result);
+		}
+		else
+		{
+			Append_Node(&result, temp_a);
+			pos = temp_a;
+			temp_a = temp_a->link;
+			pos->link = NULL;
+			printf("노드 d %d회", ++num);
+			Print_Linked_List(result);
+
+		}
+	}
+	while (temp_a != NULL)
+	{
+		Append_Node(&result, temp_a);
+		pos = temp_a;
+		temp_a = temp_a->link;
+		pos->link = NULL;
+		printf("노드 d %d회", ++num);
+		Print_Linked_List(result);
+	}
+	while (temp_b != NULL)
+	{
+		Append_Node(&result, temp_b);
+		pos = temp_b;
+		temp_b = temp_b->link;
+		pos->link = NULL;
+		printf("노드 d %d회", ++num);
+		Print_Linked_List(result);
+	}
+	return result;
 }
