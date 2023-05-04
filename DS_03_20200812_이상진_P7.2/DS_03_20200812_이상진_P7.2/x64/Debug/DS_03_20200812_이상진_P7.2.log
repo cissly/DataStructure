@@ -1,0 +1,29 @@
+﻿빌드 시작: 2023-05-04 오전 10:11:52
+로깅의 세부 정보 표시가 Normal(으)로 설정되었습니다.     1>2 노드의 "C:\Users\tkdwl\OneDrive\바탕 화면\자료구조\DataStructure\DS_03_20200812_이상진_P7.2\DS_03_20200812_이상진_P7.2\DS_03_20200812_이상진_P7.2.vcxproj" 프로젝트(Build 대상)입니다.
+     1>InitializeBuildStatus:
+         "AlwaysCreate"이(가) 지정되었기 때문에 "x64\Debug\DS_03_20.822ca761.tlog\unsuccessfulbuild"을(를) 만들고 있습니다.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\bin\HostX64\x64\CL.exe /c /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /permissive- /Fo"x64\Debug\\" /Fd"x64\Debug\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:prompt MyMaxHeapTree.cpp
+         MyMaxHeapTree.cpp
+     1>C:\Users\tkdwl\OneDrive\바탕 화면\자료구조\DataStructure\DS_03_20200812_이상진_P7.2\DS_03_20200812_이상진_P7.2\MyMaxHeapTree.cpp(6,48): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>C:\Users\tkdwl\OneDrive\바탕 화면\자료구조\DataStructure\DS_03_20200812_이상진_P7.2\DS_03_20200812_이상진_P7.2\MyMaxHeapTree.cpp(7,52): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+       Link:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\bin\HostX64\x64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\tkdwl\OneDrive\바탕 화면\자료구조\DataStructure\DS_03_20200812_이상진_P7.2\x64\Debug\DS_03_20200812_이상진_P7.2.exe" /INCREMENTAL /ILK:"x64\Debug\DS_03_20200812_이상진_P7.2.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\tkdwl\OneDrive\바탕 화면\자료구조\DataStructure\DS_03_20200812_이상진_P7.2\x64\Debug\DS_03_20200812_이상진_P7.2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\tkdwl\OneDrive\바탕 화면\자료구조\DataStructure\DS_03_20200812_이상진_P7.2\x64\Debug\DS_03_20200812_이상진_P7.2.lib" /MACHINE:X64 "x64\Debug\소스.obj"
+         x64\Debug\MyMaxHeapTree.obj
+         DS_03_20200812_이상진_P7.2.vcxproj -> C:\Users\tkdwl\OneDrive\바탕 화면\자료구조\DataStructure\DS_03_20200812_이상진_P7.2\x64\Debug\DS_03_20200812_이상진_P7.2.exe
+       FinalizeBuildStatus:
+         "x64\Debug\DS_03_20.822ca761.tlog\unsuccessfulbuild" 파일을 삭제하고 있습니다.
+         "x64\Debug\DS_03_20.822ca761.tlog\DS_03_20200812_이상진_P7.2.lastbuildstate"에 연결(touching)하고 있습니다.
+     1>"C:\Users\tkdwl\OneDrive\바탕 화면\자료구조\DataStructure\DS_03_20200812_이상진_P7.2\DS_03_20200812_이상진_P7.2\DS_03_20200812_이상진_P7.2.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+       "C:\Users\tkdwl\OneDrive\바탕 화면\자료구조\DataStructure\DS_03_20200812_이상진_P7.2\DS_03_20200812_이상진_P7.2\DS_03_20200812_이상진_P7.2.vcxproj"(Build 대상)(1) ->
+       (ClCompile 대상) -> 
+         C:\Users\tkdwl\OneDrive\바탕 화면\자료구조\DataStructure\DS_03_20200812_이상진_P7.2\DS_03_20200812_이상진_P7.2\MyMaxHeapTree.cpp(6,48): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+         C:\Users\tkdwl\OneDrive\바탕 화면\자료구조\DataStructure\DS_03_20200812_이상진_P7.2\DS_03_20200812_이상진_P7.2\MyMaxHeapTree.cpp(7,52): warning C4244: '인수': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+
+    경고 2개
+    오류 0개
+
+경과 시간: 00:00:00.83
