@@ -10,14 +10,14 @@ private:
 	int qSize; //큐의 길이를 저장
 public:
 	CircularQueue() {
-		front = -1;
-		rear = -1;
+		front = 0;
+		rear = 0;
 		arr = new T[QUEUE_SIZE];
 		qSize = QUEUE_SIZE;
 	}
 	CircularQueue(int size) {
-		front = -1;
-		rear = -1;
+		front = 0;
+		rear = 0;
 		arr = new T[size];
 		qSize = size;
 	}
@@ -36,7 +36,7 @@ public:
 	//큐가 가득 차 있는지 확인
 	bool IsFull() 
 	{
-		if (front == ((rear + 1) % QUEUE_SIZE))
+		if (front == ((rear + 1) % qSIZE))
 		{
 			return true;
 		}
@@ -53,7 +53,7 @@ public:
 		{
 			return false;
 		}
-		rear = (rear + 1) % QUEUE_SIZE;
+		rear = (rear + 1) % qSIZE;
 		arr[rear] = item;
 	}
 	//큐에서 데이터를 꺼냄
@@ -63,7 +63,7 @@ public:
 		{
 			return NULL;
 		}
-		front = (front + 1) % QUEUE_SIZE;
+		front = (front + 1) % qSIZE;
 		return arr[front];
 	} 
 	//최상단 데이터를 확인
@@ -71,9 +71,9 @@ public:
 	{
 		if (IsEmpty())
 		{
-			return;
+			return NULL;
 		}
-		int temp = (front + 1) % QUEUE_SIZE;
+		int temp = (front + 1) % qSIZE;
 		return arr[temp];
 	} 
 	~CircularQueue() {

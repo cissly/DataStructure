@@ -57,31 +57,22 @@ Node* DLL_Get_Node(Node* head, int pos)
 	return node_add;
 }
 
-void DLL_Remove_Node(Node** head, Node* targetNode)
+void DLL_Remove_Node(Node* targetNode)
 {
-	Node* cur_node = *head;
-	if (cur_node == targetNode)
+	if (targetNode->prev == NULL)
 	{
-		*head = cur_node->next;
-		cur_node->prev = NULL;
+		targetNode->next->prev = targetNode->prev;
+	}
+	if (targetNode->next == NULL)
+	{
+		targetNode->prev->next = targetNode->next;
 	}
 	else
 	{
-		while ((cur_node->next != targetNode))
-		{
-			if (cur_node->next == NULL)
-			{
-				break;
-			}
-			cur_node = cur_node->next;
-		}
-		if (cur_node->next == targetNode)
-		{
-			cur_node->next = cur_node->next->next;
-			cur_node->next->prev = cur_node;
-		}
+		targetNode->prev->next = targetNode->next;
+		targetNode->next->prev = targetNode->prev;
+		DLL_Destroy_Node(targetNode);
 	}
-	DLL_Destroy_Node(targetNode);
 }
 
 void DLL_Insert_Node_After(Node* currentNode, Node* newNode)

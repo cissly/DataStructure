@@ -14,9 +14,10 @@ Node* Newnode(int val)
 	return newnode;
 }
 
+//헤드를 이용해 맨 마지막을 찾은뒤 그곳에 노드를 추가하는 함수
 void Append_Node(Node** head, Node* newnode)
 {
-	if (*head == NULL)
+	if (*head == NULL)//첫 노드 추가
 	{
 		*head = newnode;
 		newnode->link = newnode;
@@ -33,9 +34,10 @@ void Append_Node(Node** head, Node* newnode)
 	}
 }
 
+//tail부분에 바로 노드를 추가하는 함수
 void Append_Node_T(Node** tail, Node* newnode)
 {
-	if (*tail == NULL)
+	if (*tail == NULL)//첫 노드 추가
 	{
 		*tail = newnode;
 		newnode->link = newnode;
@@ -119,7 +121,7 @@ int main(void)
 //추가 응용학습
 void Append_Node_T_F(Node** tail, Node* newnode)
 {
-	if (*tail == NULL)
+	if (*tail == NULL)//첫 노드 추가
 	{
 		*tail = newnode;
 		newnode->link = newnode;
@@ -134,7 +136,7 @@ void Append_Node_T_F(Node** tail, Node* newnode)
 
 void Append_Node_F(Node** head, Node* newnode)
 {
-	if (*head== NULL)
+	if (*head== NULL)//첫 노드 추가
 	{
 		*head = newnode;
 		newnode->link = newnode;

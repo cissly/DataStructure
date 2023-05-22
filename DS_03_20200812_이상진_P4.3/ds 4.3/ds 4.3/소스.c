@@ -15,7 +15,7 @@ int main(void)
 	DLL_Print_Linked_List(head);
 
 	//Remove_Node() 함수 기능 테스트
-	DLL_Remove_Node(&head, DLL_Get_Node(head, 1));
+	DLL_Remove_Node(DLL_Get_Node(head, 1));
 	DLL_Append_Node(&head, DLL_Create_Node(41));
 	DLL_Print_Linked_List(head);
 	DLL_Print_Linked_List_Reverse(DLL_Get_Node(head, 2));

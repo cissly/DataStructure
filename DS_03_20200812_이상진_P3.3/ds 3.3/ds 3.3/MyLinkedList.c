@@ -103,7 +103,7 @@ void Remove_Node(Node** head, Node* targetNode)
 			cur_node->link = cur_node->link->link;
 		}
 	}
-	free(targetNode);
+	Destroy_Node(targetNode);
 }
 
 //노드를 특정위치에 추가시키는 함수
@@ -139,10 +139,15 @@ Node* Search_Node(Node* head, int data)
 	}
 }
 
+//헤드를 받아 역연결리스트의 시작노드 주소를 반환하는 함수
 Node* Reverse_List(Node* head)
 {
 	Node* reverse = NULL;
 	Node* temp = NULL;
+	/*reverse를 temp에 복사한다.
+	헤드노드를 reverse로 옮긴다.
+	그이후 헤드를 헤드노드다음을 가르키게 한다.
+	reverse가 받은 노드가 temp를 가르키게한다.*/
 	while (head != NULL)
 	{
 		temp = reverse;

@@ -15,7 +15,7 @@ int Eval_Postfix(char* postfix_exp); // 후위식 계산 및 결과
 
 int main(void) 
 {
-	char exp[] = "(2*7-4)"; //계산할 수식
+	char exp[] = "(2+5)*(3+4)-(2+(7-5))"; //계산할 수식
 	char* postfix = new char[strlen(exp) + 1]; //후위식 변환 결과
 
 	//1) 중위식에서 후위식으로 변환

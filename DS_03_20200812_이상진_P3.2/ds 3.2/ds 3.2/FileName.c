@@ -7,7 +7,7 @@ int main(void)
 {
 	Node* head = NULL;
 	//기본노드 생성
-	Append_Node(&head, Create_Node(20));
+	Append_Node(&head, Create_Node(15));
 	Append_Node(&head, Create_Node(31));
 	Print_list(head);
 	
@@ -20,7 +20,9 @@ int main(void)
 	Print_list(head);
 
 	//remove함수 기능테스트
+	Remove_Node(&head, Get_Node(head, 0));
 	Remove_Node(&head, Get_Node(head, 1));
+	Append_Node(&head, Create_Node(15));
 	Print_list(head);
 
 	Search_Node(head, 25);
