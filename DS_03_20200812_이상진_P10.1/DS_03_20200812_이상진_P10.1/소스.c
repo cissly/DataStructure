@@ -2,7 +2,7 @@
 #include <limits.h>
 int main()
 {
-	const char* file = "g_file3.txt";
+	const char* file = "g_file.txt";
 	int weight_mat[MAX_VERTICES][MAX_VERTICES] = { 0 };
 	int MST[MAX_VERTICES][MAX_VERTICES] = { 0 };
 	int num_of_ver = 7;
